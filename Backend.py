@@ -8,8 +8,9 @@ from PIL import Image
 
 
 def interpret_command_with_gpt(command):
-    
-    genai.configure(api_key="Your api key")
+
+    api_key = st.secrets["api_keys"]["genai"]
+    genai.configure(api_key= api_key)
     generation_config = {
         "temperature": 1,
         "top_p": 0.95,
